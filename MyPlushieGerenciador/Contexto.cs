@@ -14,6 +14,7 @@ namespace MyPlushieGerenciador
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Compra> Compra { get; set; }
         public DbSet<CompraProduto> CompraProduto { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(
@@ -23,5 +24,10 @@ namespace MyPlushieGerenciador
                 "User Id=postgres;" +
                 "Password=postgres;");
         }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<CompraProduto>().HasKey(cp => cp.FKCompra, cp.FKProduto);
+        //}
     }
 }
