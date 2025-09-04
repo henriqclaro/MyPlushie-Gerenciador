@@ -14,5 +14,14 @@ namespace MyPlushieGerenciador
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Compra> Compra { get; set; }
         public DbSet<CompraProduto> CompraProduto { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseNpgsql(
+                "Host=localhost;" +
+                "Port=5432;" +
+                "Database=-------;" +
+                "User Id=postgres;" +
+                "Password=postgres;");
+        }
     }
 }
