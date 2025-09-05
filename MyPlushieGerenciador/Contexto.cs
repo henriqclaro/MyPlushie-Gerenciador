@@ -25,9 +25,9 @@ namespace MyPlushieGerenciador
                 "Password=postgres;");
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<CompraProduto>().HasKey(cp => cp.FKCompra, cp.FKProduto);
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CompraProduto>().HasKey(cp => new { cp.IdCompra, cp.IdProduto });
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,28 +9,30 @@ namespace MyPlushieGerenciador.Models
     public class Usuario
     {
         [Key]
-        [Column("id")]
+        [Column("id_usuario")]
         public int Id { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
 
-        [Column("email")]
-        public string Email { get; set; }
-
-        [Column("senha")]
+        [Column("senha_hash")]
         public string Senha { get; set; }
 
         [Column("admin")]
         public bool Admin { get; set; }
 
+        [Column("telefone")]
+        public string Telefone { get; set; }
+
+        [Column("email")]
+        public string Email { get; set; }
+
         [Column("excluido")]
         public bool Excluido { get; set; }
 
         [Column("data_exclusao")]
-        public DateTime? DataExclusao { get; set; } // DateTime? para permitir valores nulos
+        public DateTime? DataExclusao { get; set; }
 
-        // Propriedade de navegação para as compras que este usuário realizou
-        public virtual ICollection<Compra> Compras { get; set; }
+        public List<Compra> Compras { get; set; }
     }
 }
