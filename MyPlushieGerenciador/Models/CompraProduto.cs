@@ -7,15 +7,15 @@ namespace MyPlushieGerenciador.Models
     [Table("compra_produto")]
     public class CompraProduto
     {
-        [Column("id_compra")]
+        [Column("fk_compra")]
         public int IdCompra { get; set; }
-
-        [Column("id_produto")]
-        public int IdProduto { get; set; }
-
+        
         [ForeignKey("IdCompra")]
         public virtual Compra Compra { get; set; }
-
+        
+        [Column("fk_produto")]
+        public int IdProduto { get; set; }
+        
         [ForeignKey("IdProduto")]
         public virtual Produto Produto { get; set; }
 
