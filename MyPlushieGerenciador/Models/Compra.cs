@@ -10,10 +10,12 @@ namespace MyPlushieGerenciador.Models
     {
         [Key]
         [Column("id_compra")]
-        public int Id { get; set; }
+        public int IdCompra { get; set; }
 
-        [ForeignKey("fk_usuario")]
+        [ForeignKey("IdCompra")]
         public virtual Usuario Usuario { get; set; }
+
+        //Status
         
         [Column("data")]
         public DateTime Data { get; set; }
