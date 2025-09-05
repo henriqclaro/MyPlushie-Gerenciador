@@ -10,7 +10,7 @@ namespace MyPlushieGerenciador.Models
     {
         [Key]
         [Column("id_usuario")]
-        public int Id { get; set; }
+        public int IdUsuario { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
