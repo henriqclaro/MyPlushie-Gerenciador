@@ -7,11 +7,9 @@ namespace MyPlushieGerenciador.Models
     [Table("compra_produto")]
     public class CompraProduto
     {
-        [Key]
         [Column("id_compra")]
         public int IdCompra { get; set; }
 
-        [Key]
         [Column("id_produto")]
         public int IdProduto { get; set; }
 
